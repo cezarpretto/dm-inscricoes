@@ -21,6 +21,14 @@
 
 <body ng-app="dmInscricoesApp">
   <div growl></div>
+  <div class="preloader" ng-if="preloader === false">
+    <div class="img-preloader">
+      <center>
+        <img src="images/preloader.gif" alt="preloader" />
+        <p><strong>Aguarde. Estamos carregando o site =)</strong></p>
+      </center>
+    </div>
+  </div>
   <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->

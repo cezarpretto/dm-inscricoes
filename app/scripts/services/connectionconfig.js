@@ -9,7 +9,7 @@
  */
 angular.module('dmInscricoesApp')
   .constant('connectionConfig', {
-    "ip": "https://protected-ocean-80696.herokuapp.com/v1/"
+    "ip": "http://localhost:3000/v1/"
   });
 
   //Heroku IP https://protected-ocean-80696.herokuapp.com/v1/

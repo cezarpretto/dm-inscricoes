@@ -131,3 +131,17 @@ BuilderPreviewHTMLCSS
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #ffe205;
 }
+
+.preloader {
+  z-index: 100000000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  /*padding: 50px;*/
+  /*background: url('../images/preloader.gif') no-repeat 50% 50% transparent;*/
+}
+
+.preloader .img-preloader{
+  padding-top: 30px;
+}
