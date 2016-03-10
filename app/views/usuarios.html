@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Cadastro de Usuários</h1>
+  </div>
+  <div class="col-sm-12">
+    <div class="well well-sm clearfix">
+      <div class="pull-right">
+        <a href="" class="btn btn-primary btn-xs" ng-click="novo()">NOVO</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-hover table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th class="text-center">Editar</th>
+          <th class="text-center">Remover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="u in usuarios">
+          <td>{{u.id}}</td>
+          <td>{{u.name}}</td>
+          <td>{{u.email}}</td>
+          <td>{{u.username}}</td>
+          <td class="text-center">
+            <button type="button" class="btn btn-warning btn-xs" ng-click="selecionaUsuario(u)">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+          </td>
+          <td class="text-center">
+            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteUsuario(u)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal fade" id="modalNewUser" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="">Adicionar/Editar Usuário</h4>
+      </div>
+      <form name="frmNewUser" ng-submit="salvar()">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">Nome:</label>
+                <input type="text" class="form-control" id="" required="required" ng-model="usuario.name">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">Email:</label>
+                <input type="email" class="form-control" id="" required="required" ng-model="usuario.email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">Username:</label>
+                <input type="text" class="form-control" id="" required="required" ng-model="usuario.username">
+              </div>
+            </div>
+            <div class="col-sm-6" ng-if="isNew">
+              <div class="form-group">
+                <label for="">Senha:</label>
+                <input type="password" class="form-control" id="" required="required" ng-model="usuario.password">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" ng-disabled="frmNewUser.$invalid">Salvar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

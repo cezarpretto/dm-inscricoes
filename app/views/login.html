@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h1>Área Administrativa - Login</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <form name="frmLogin" ng-submit="logar()">
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="">Usuário:</label>
+              <input type="text" class="form-control" id="" placeholder="" required="required" ng-model="usuario.username">
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="">Senha:</label>
+              <input type="password" class="form-control" id="" placeholder="" required="required" ng-model="usuario.password">
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary btn-block" ng-disabled="frmLogin.$invalid">
+              LOGAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

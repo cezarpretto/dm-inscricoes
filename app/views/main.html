@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-warning">
+      <div class="panel-body" style="min-height: 200px;">
+        <div class="">
+          <h3>Consulte sua Inscrição</h3>
+          <form name="frmConsulta">
+            <div class="form-group">
+              <label for="">Código da Inscrição:</label>
+              <input type="text" class="form-control" id="" required="required" ng-model="codgInscricao">
+            </div>
+            <a href="#/inscricao/{{codgInscricao}}" class="btn btn-primary btn-block btn-sm" ng-disabled="frmConsulta.$invalid">Consultar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-warning">
+      <div class="panel-body" style="min-height: 200px;">
+        <div class="">
+          <h3>Ainda não fez sua inscrição?</h3>
+          <br>
+          <br>
+          <a href="#/inscricao" class="btn btn-success btn-block btn-lg">Fazer Inscrição</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

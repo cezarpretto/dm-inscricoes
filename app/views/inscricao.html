@@ -1,0 +1,157 @@
+<div class="container">
+  <div class="row">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Inscrição</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-if="update && !inscricao.comprovante && retornoSucesso === false && comprovanteOk === false">
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-success btn-lg btn-block" ng-click="openFile(this)" id="btnOpen">
+          Clique aqui para enviar seu comprovante
+        </button>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="row">
+    <form name="frmInscricao" ng-if="retornoSucesso === false && comprovanteOk === false">
+      <div class="row" ng-if="inscricao.status">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Status da Inscrição:</label>
+            <span class="form-control">{{inscricao.status}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Nome Completo:</label>
+            <input type="text" class="form-control" id="" placeholder="" ng-model="inscricao.nome" required="required" ng-disabled="update">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Email:</label>
+            <input type="mail" class="form-control" id="" placeholder="" ng-model="inscricao.email" required="required" ng-disabled="update">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Data Nascimento:</label>
+            <input type="text" date-mask class="form-control" id="" placeholder="" ng-model="inscricao.dt_nascimento" required="required" ng-disabled="update">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Você é?</label>
+            <select class="form-control" ng-model="inscricao.tipo" required="required" ng-disabled="update">
+              <option value="DEMOLAY">DeMolay</option>
+              <option value="DEMOLAYM">DeMolay/Maçom</option>
+              <option value="MACOM">Maçom</option>
+              <option value="VISITANTE">Visitante</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Capítulo:</label>
+            <input type="text" class="form-control" id="" placeholder="" ng-model="inscricao.capitulo" required="required" ng-disabled="update">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Cidade:</label>
+            <input type="text" class="form-control" id="" placeholder="" ng-model="inscricao.cidade" required="required" ng-disabled="update">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" ng-if="inscricao.tipo === 'DEMOLAY'">
+          <div class="form-group">
+            <label for="">Id DeMolay:</label>
+            <input type="text" class="form-control" id="" placeholder="" ng-model="inscricao.id_demolay" required="required" ng-disabled="update">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Tamanho Camiseta:</label>
+            <select class="form-control" ng-model="inscricao.camiseta" required="required" ng-disabled="update">
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row" ng-if="idInscricao">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Comprovante:</label>
+            <input class="form-control" accept="application/pdf" type='file' ng-model='comprovante.comprovanteBase64' base-sixty-four-input required="required" ng-disabled="inscricao.comprovante" id="inputFile">
+            <a href="{{trustSrc(inscricao.comprovante)}}" target="_blank" ng-if="inscricao.comprovante">Ver comprovante</a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Observações:</label>
+            <textarea class="form-control" ng-disabled="inscricao.comprovante != null" ng-model="inscricao.observacao"></textarea>
+          </div>
+        </div>
+        <!-- {{comprovante.comprovanteBase64 | json}} -->
+        <!-- <a href="data:application/pdf;base64,{{inscricao.comprovante}}" target="_blank">VAi</a> -->
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-success pull-right" ng-click="salvar()" ng-disabled="frmInscricao.$invalid" ng-if="update === false">
+            <span class="glyphicon glyphicon-floppy-disk"></span> Salvar
+          </button>
+          <button type="button" class="btn btn-success pull-right" ng-click="atualizar()" ng-disabled="frmInscricao.$invalid" ng-if="update">
+            <span class="glyphicon glyphicon-floppy-disk"></span> Enviar Comprovante
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="row" ng-if="retornoSucesso">
+      <div class="col-sm-12 text-center">
+        <h1>Parabéns {{retornoSucesso.nome}}</h1>
+        <p>Sua inscrição foi realizada com sucesso! Um email com as informações de pagamento foi enviada para o email: {{retornoSucesso.email}}</p>
+        <p>
+          <a href="#/" class="btn btn-primary">Voltar</a>
+        </p>
+      </div>
+    </div>
+    <div class="row" ng-if="comprovanteOk">
+      <div class="col-sm-12 text-center">
+        <h1>Olá {{comprovanteOk.nome}}</h1>
+        <p>O comprovante já foi recebido. Agora é só esperar sua inscrição ser confirmada!</p>
+        <a href="#/" class="btn btn-primary">Voltar</a>
+      </p>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+
+<div class="modal fade" id="loadingInscricao" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+        <h4 class="modal-title" id="">Inscrição VI CROD</h4>
+      </div>
+      <div class="modal-body">
+        <p>Aguarde. Sua inscrição está sendo processada.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="containers">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Área Administrativa</h1>
+    </div>
+    <div class="col-sm-12">
+      <div class="well well-sm clearfix">
+        <a href="#/usuarios">Cadastro de Usuários</a>
+        <div class="pull-right">
+          <a href="" ng-click="logout()">SAIR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-hover table-striped table-condensed" st-table="inscricoes" st-safe-src="inscricoesAux">
+        <thead>
+          <tr>
+            <th colspan="5">
+              <input type="text" class="form-control" st-search="nome" placeholder="Filtrar por nome">
+            </th>
+            <th>
+              <input type="text" class="form-control" st-search="cidade" placeholder="Filtrar por cidade">
+            </th>
+            <th>
+              <select class="form-control" st-search="tipo">
+                <option value="">Tudo</option>
+                <option value="DEMOLAY">DeMolay</option>
+                <option value="DEMOLAYM">DeMolay/Maçom</option>
+                <option value="MACOM">Maçom</option>
+                <option value="VISITANTE">Visitante</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-control" st-search="camiseta">
+                <option value="">Tudo</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+              </select>
+            </th>
+            <th colspan="3">
+              <select class="form-control" st-search="status">
+                <option value="">Tudo</option>
+                <option value="INSCRIÇÃO REALIZADA">INSCRIÇÃO REALIZADA</option>
+                <option value="COMPROVANTE ENVIADO">COMPROVANTE ENVIADO</option>
+                <option value="INSCRIÇÃO CONFIRMADA">INSCRIÇÃO CONFIRMADA</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Dt. Nascimento</th>
+            <th>Capítulo</th>
+            <th>Cidade</th>
+            <th>Tipo</th>
+            <th>Camiseta</th>
+            <th>Status</th>
+            <th>Comprovante</th>
+            <th>Confirmar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="i in inscricoes">
+            <td>{{i.id}}</td>
+            <td>{{i.nome}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.dt_nascimento | date:'dd/MM/yyyy'}}</td>
+            <td>{{i.capitulo}}</td>
+            <td>{{i.cidade}}</td>
+            <td>{{i.tipo}}</td>
+            <td>{{i.camiseta}}</td>
+            <td>{{i.status}}</td>
+            <td class="text-center">
+              <a href="{{i.comprovante}}" ng-disabled="!i.comprovante" class="btn btn-primary btn-xs" title="Fazer download comprovante" target="_blank">
+                <span class="glyphicon glyphicon-download"></span>
+              </a>
+            </td>
+            <td class="text-center">
+              <button ng-disabled="!i.comprovante || i.status === 'INSCRIÇÃO CONFIRMADA'" type="button" class="btn btn-success btn-xs" title="Confirmar inscrição" ng-click="confirmar(i)">
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+    			<tr>
+    				<td colspan="11" class="text-center">
+    					<div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+    				</td>
+    			</tr>
+    		</tfoot>
+      </table>
+    </div>
+  </div>
+</div>
