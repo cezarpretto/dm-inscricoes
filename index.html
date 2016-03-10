@@ -1,0 +1,13 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.942d7ec5.css"> <link rel="stylesheet" href="styles/main.a4766c95.css"> </head> <body ng-app="dmInscricoesApp"> <div growl></div> <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <!-- Add your site or application content here --> <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation"> <div class="container-fluid"> <div class="navbar-header"><a class="navbar-brand" href="#">VI CROD</a> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> </div> <div class="collapse navbar-collapse navbar-menubuilder"> <ul class="nav navbar-nav navbar-left"> <li class="active"><a href="#/">Home</a></li> <li><a ng-href="#/inscricao">Inscrição</a></li> <li><a ng-href="#/mainAdmin">Restrito</a></li> </ul> </div> </div> </div> <div class="container-fluid"> <div ng-view=""></div> </div> <div class="footer"> <div class="container"> <p>Made with <span class="glyphicon glyphicon-heart text-danger"></span> and lots of coffe by <a href="http://github.com/cezarpretto" target="_blank">@cezarpretto</a></p> </div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>! function(A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');</script> <script src="scripts/vendor.fcb18ce6.js"></script> <script src="scripts/scripts.d002a657.js"></script> <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script> <script type="text/javascript">(function() {
+      emailjs.init("user_gzVIFEWjC0R9mLxEsif76");
+    })();</script> </body> </html>
