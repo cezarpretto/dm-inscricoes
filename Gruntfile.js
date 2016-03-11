@@ -393,6 +393,10 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          src: 'CNAME',
+          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
@@ -437,13 +441,6 @@ module.exports = function (grunt) {
         options: {
           remote: 'https://github.com/cezarpretto/dm-inscricoes.git',
           branch: 'gh-pages'
-        }
-      },
-      heroku: {
-        options: {
-          remote: 'git@heroku.com:lit-forest-77467.git',
-          branch: 'master',
-          tag: pkg.version
         }
       },
       local: {
