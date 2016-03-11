@@ -33,11 +33,11 @@ angular.module('dmInscricoesApp')
     };
 
     this.sendMail = function(nome, nrInscricao, email){
-      return emailjs.send("gmail", "confimatemplate", {"name": nome, "email_to": email, "product_name": "VI CROD", "nr_inscricao": nrInscricao, "action_url": "http://localhost:9000/#/inscricao/"+nrInscricao});
+      return emailjs.send("gmail", "confimatemplate", {"name": nome, "email_to": email, "product_name": "VI CROD", "nr_inscricao": nrInscricao, "action_url": "http://demolayab.org/#/inscricao/"+nrInscricao});
     };
 
     this.sendMailConfirmation = function(nome, nrInscricao, email){
-      return emailjs.send("gmail", "inscricaoconfirmada", {"name": nome, "email_to": email, "product_name": "VI CROD", "nr_inscricao": nrInscricao, "action_url": "http://localhost:9000/#/inscricao/"+nrInscricao});
+      return emailjs.send("gmail", "inscricaoconfirmada", {"name": nome, "email_to": email, "product_name": "VI CROD", "nr_inscricao": nrInscricao, "action_url": "http://demolayab.org/#/inscricao/"+nrInscricao});
     };
 
     this.getInscricoes = function(){
