@@ -20,7 +20,8 @@ angular
     'naif.base64',
     'smart-table',
     'angular-growl',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'ngMap'
   ])
   .config(function ($routeProvider) {
     $routeProvider

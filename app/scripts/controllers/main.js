@@ -8,10 +8,6 @@
  * Controller of the dmInscricoesApp
  */
 angular.module('dmInscricoesApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['NgMap', function (NgMap) {
+    
+  }]);

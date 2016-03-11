@@ -145,3 +145,37 @@ BuilderPreviewHTMLCSS
 .preloader .img-preloader{
   padding-top: 30px;
 }
+
+.cm{
+  width: 150px;
+  height: 75px;
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 16px 16px 16px 16px;
+  border-color: red;
+  border: 1px solid;
+}
+
+.cm:after{
+	content: '';
+  position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+	top: 75px;
+	border: 8px solid;
+	border-color: #fff transparent transparent #fff;
+}
+
+.cm:before
+{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+	top: 75px;
+	border: 8px solid;
+	border-color: #666 transparent transparent #666;
+}
