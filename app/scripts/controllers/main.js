@@ -8,6 +8,8 @@
  * Controller of the dmInscricoesApp
  */
 angular.module('dmInscricoesApp')
-  .controller('MainCtrl', ['NgMap', function (NgMap) {
-    
+  .controller('MainCtrl', ['NgMap', '$scope', '$location', function (NgMap, $scope, $location) {
+    $scope.buscaEmail = function(email){
+      $location.path('/inscricao/ZW1haWw=/' + email);
+    };
   }]);

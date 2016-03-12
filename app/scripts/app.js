@@ -35,7 +35,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/inscricao/:id_inscricao?', {
+      .when('/inscricao/:id_inscricao?/:email?', {
         templateUrl: 'views/inscricao.html',
         controller: 'InscricaoCtrl',
         controllerAs: 'inscricao'

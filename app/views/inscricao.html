@@ -6,6 +6,26 @@
       </div>
     </div>
   </div>
+  <div class="row" ng-if="inscricao.status == 'INSCRIÇÃO REALIZADA'">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="jumbotron">
+          <h2 class="text-danger">ATENÇÃO CONGRESSISTA</h2>
+          <p>Seu pagamento ainda não foi efetuado. Para efetuar o pagamento você deve fazer um depósito na seguinte conta:</p>
+          <p style="font-size: 19px;">
+            <span>Banco do Brasil</span> <br>
+            Agência: 1317-X <br>
+            Conta Poupança: 18575-2 <br>
+            Cezar Vinícius de Oliveira Pretto <br>
+            <strong><span class="text-success">R$ 60,00</span></strong>
+          </p>
+          <p>
+            <strong>Após o depósito efetuado você deve enviar o comprovante em <span class="text-danger">PDF</span> pelo botão abaixo =)</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row" ng-if="update && !inscricao.comprovante && retornoSucesso === false && comprovanteOk === false">
     <div class="row">
       <div class="col-sm-12">

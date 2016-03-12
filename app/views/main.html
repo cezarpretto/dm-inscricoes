@@ -3,6 +3,11 @@
     <div class="jumbotron">
       <h2 class="text-success">Dias 22 e 23 de Abril de 2016</h2>
       <h3>Água Boa - MT</h3>
+      <h2 class="text-danger">Atenção Congressista</h2>
+      <p>
+        Estamos recebendo relatos de não recebimento de email de confirmação de inscrição. Caso tenha passado por isso
+        você pode consultar sua inscrição pelo formulário abaixo e terá todas as insformações referente ao pagamento.
+      </p>
     </div>
   </div>
 </div>
@@ -12,12 +17,12 @@
       <div class="panel-body" style="min-height: 200px;">
         <div class="">
           <h3>Consulte sua Inscrição</h3>
-          <form name="frmConsulta">
+          <form name="frmConsulta" ng-submit="buscaEmail(email)">
             <div class="form-group">
-              <label for="">Código da Inscrição:</label>
-              <input type="text" class="form-control" id="" required="required" ng-model="codgInscricao">
+              <label for="">Email:</label>
+              <input type="text" class="form-control" id="" required="required" ng-model="email">
             </div>
-            <a href="#/inscricao/{{codgInscricao}}" class="btn btn-primary btn-block btn-sm" ng-disabled="frmConsulta.$invalid">Consultar</a>
+            <button type="submit" class="btn btn-primary btn-block btn-sm" ng-disabled="frmConsulta.$invalid">Consultar</button>
           </form>
         </div>
       </div>

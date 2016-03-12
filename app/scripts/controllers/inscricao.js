@@ -11,6 +11,7 @@ angular.module('dmInscricoesApp')
   .controller('InscricaoCtrl', ['$scope', 'InscricaoModel', '$routeParams', 'InscricaoService', 'ModalService', '$sce', function ($scope, InscricaoModel, $routeParams, InscricaoService, ModalService, $sce) {
     // console.log(window.atob($routeParams.id_inscricao));
     $scope.idInscricao = $routeParams.id_inscricao;
+    var email = $routeParams.email;
     $scope.inscricao = new InscricaoModel.Inscricao();
     $scope.retornoSucesso = false;
     $scope.comprovanteOk = false;
@@ -19,11 +20,24 @@ angular.module('dmInscricoesApp')
 
     if($scope.idInscricao !== undefined){
       $scope.update = true;
-      InscricaoService.get(window.atob($scope.idInscricao)).then(function(retorno){
-        $scope.inscricao = retorno.data.data[0];
-      }).catch(function(err){
-        console.error(err);
-      });
+      ModalService.show('loadingInscricao');
+      if($scope.idInscricao === 'ZW1haWw='){
+        InscricaoService.getByEmail(email).then(function(retorno){
+          $scope.inscricao = retorno.data.data[0];
+          ModalService.hide('loadingInscricao');
+        }).catch(function(err){
+          console.error(err);
+          ModalService.hide('loadingInscricao');
+        });
+      }else{
+        InscricaoService.get(window.atob($scope.idInscricao)).then(function(retorno){
+          $scope.inscricao = retorno.data.data[0];
+          ModalService.hide('loadingInscricao');
+        }).catch(function(err){
+          console.error(err);
+          ModalService.hide('loadingInscricao');
+        });
+      }
     }
 
     $scope.salvar = function(){
