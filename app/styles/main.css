@@ -179,3 +179,7 @@ BuilderPreviewHTMLCSS
 	border: 8px solid;
 	border-color: #666 transparent transparent #666;
 }
+
+.box-fixed{
+  height: 350px;
+}
