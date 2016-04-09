@@ -11,6 +11,7 @@
       <div class="row">
         <div class="jumbotron">
           <h2 class="text-danger">ATENÇÃO CONGRESSISTA</h2>
+          <h2 class="text-info"><strong>ESTE LOTE NÃO POSSUI MAIS CAMISETA POIS O PAGAMENTO ESTÁ SENDO EFETUADO APÓS O DIA 08/04/2016.</strong></h2>
           <p>Seu pagamento ainda não foi efetuado. Para efetuar o pagamento você deve fazer um depósito na seguinte conta:</p>
           <p style="font-size: 19px;">
             <span>Banco do Brasil</span> <br>
@@ -44,6 +45,11 @@
             <label for="">Status da Inscrição:</label>
             <span class="form-control">{{inscricao.status}}</span>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <strong>LOTE SEM CAMISETA</strong>
         </div>
       </div>
       <div class="row">
@@ -100,17 +106,14 @@
             <input type="text" class="form-control" id="" placeholder="" ng-model="inscricao.id_demolay" required="required" ng-disabled="update">
           </div>
         </div>
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
           <div class="form-group">
             <label for="">Tamanho Camiseta:</label>
             <select class="form-control" ng-model="inscricao.camiseta" required="required" ng-disabled="update">
-              <option value="P">P</option>
-              <option value="M">M</option>
-              <option value="G">G</option>
-              <option value="GG">GG</option>
+              <option value="N">Lote sem Camiseta</option>
             </select>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="row" ng-if="idInscricao">
         <div class="col-sm-6">

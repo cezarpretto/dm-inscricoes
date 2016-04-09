@@ -183,3 +183,24 @@ BuilderPreviewHTMLCSS
 .box-fixed{
   height: 350px;
 }
+
+/*@import '//fonts.googleapis.com/css?family=Bangers';*/
+
+body { margin:0; }
+.wrap {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.time-to {
+  text-align:center;
+  /*font-family:Bangers;*/
+  color:black;
+  font-size:35px;
+  letter-spacing:2px;
+  span {
+    display:block;
+    font-size:80px;
+    color:red;
+  }
+}

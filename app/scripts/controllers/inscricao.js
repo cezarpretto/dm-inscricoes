@@ -44,6 +44,7 @@ angular.module('dmInscricoesApp')
       var retorno = [];
       // console.log($scope.inscricao);
       $scope.inscricao.status = 'INSCRIÇÃO REALIZADA';
+      $scope.inscricao.camiseta = 'LOTE SEM CAMISETA';
       ModalService.show('loadingInscricao');
       InscricaoService.post($scope.inscricao).then(function(data){
         retorno = data.data.data[0];
@@ -63,6 +64,7 @@ angular.module('dmInscricoesApp')
 
     $scope.atualizar = function(){
       $scope.inscricao.status = 'COMPROVANTE ENVIADO';
+      $scope.inscricao.camiseta = 'LOTE SEM CAMISETA';
       ModalService.show('loadingInscricao');
       InscricaoService.put($scope.inscricao).then(function(retorno){
         ModalService.hide('loadingInscricao');

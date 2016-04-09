@@ -17,7 +17,7 @@ angular.module('dmInscricoesApp')
       this.dt_nascimento = undefined;
       this.id_demolay = undefined;
       this.tipo = undefined;
-      this.camiseta = undefined;
+      this.camiseta = 'LOTE SEM CAMISETA';
       this.comprovante = undefined;
       this.cidade = undefined;
       this.capitulo = undefined;
